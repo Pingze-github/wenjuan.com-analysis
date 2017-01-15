@@ -1,0 +1,21 @@
+1.问卷网的POST不能重复发送。发送的数据更多，有更强的验证机制
+
+2.主要的body参数有：
+  total_answers_str :提交数据
+  pconvert_data     :不明，默认{}
+  finish_status     :是否结束，默认1
+  project_version   :不明，默认1，存在于网页中
+  timestr           :时间，存在于网页中
+  idy_uuid          :hash值，存在于网页中
+  svc               :hash值，加密数据
+  vvv               :hash值，存在于网页中
+  s_code            :整数，加密数据
+  s_func_id         :整数，存在于网页中 
+  rand_int          :整数，存在于网页中
+  question_captcha_map_str  :验证码，默认{}
+  _xsrf             :hash值，存在于网页中 
+
+3.问卷网问题/选项的标签id随机，如：
+  {"58672afd3fcf579d35c41cf9":["58672afd3fcf579d35c41cfa"],"58672aff3fcf579cf8ceb7a4":[["58672aff3fcf579cf8ceb7a6"]],"58672b053fcf579d597d92e5":["58672b053fcf579d597d92e6"],"58672b073fcf579d35c41d01":{"58672b083fcf579d35c41d02_open":"神"}}
+
+4.猜测问卷网检测客户端ip使用RemoteAddress，无法简单伪造，必须使用代理来更改ip。
